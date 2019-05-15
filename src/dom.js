@@ -1,1 +1,0 @@
-import iscroll from 'iscroll'
