@@ -5,6 +5,17 @@ iscroll.prototype.initEvent = function (elm) {
       touchMove = 0,
       start
 
+  // /** 注册某个事件 */
+  // this.on = function (eventName, cb) {
+  //   this.event[eventName] = cb
+  // }
+
+  /** 发出某个事件 */
+  this.emit = function (eventName, obj) {
+    // 当如果有注册了这个事件的话 则执行注册这个事件的方法
+    if (this.event[eventName] instanceof Function) this.event[eventName](obj)
+  }
+
   elm.addEventListener('touchstart', (e) => {
     this.isTouch = true
     touchStart = e.changedTouches[0].pageX
@@ -20,9 +31,17 @@ iscroll.prototype.initEvent = function (elm) {
 
   elm.addEventListener('touchend', () => {
     this.isTouch = false
+    this.emit('slide', {})
   })
 }
 
+/** 注册某个事件 */
 iscroll.prototype.on = function (eventName, cb) {
-
+  this.event[eventName] = cb
 }
+
+// /** 发出某个事件 */
+// iscroll.prototype.emit = function (eventName, obj) {
+//   // 当如果有注册了这个事件的话 则执行注册这个事件的方法
+//   if (this.event[eventName] instanceof 'function') this.event[eventName](obj)
+// }

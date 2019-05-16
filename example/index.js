@@ -6,3 +6,7 @@ lib.generateTag(10).forEach(item => document.querySelector('#app').appendChild(i
 const iscroll = new IScroll({
   elm: document.querySelector('#app')
 })
+
+iscroll.on('slide', () => {
+  console.log('slide')
+})

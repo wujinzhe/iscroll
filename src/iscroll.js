@@ -44,6 +44,8 @@ function IScroll (options = {}) {
     slideRight () {}
   }
 
+  this.event = {}
+
   this.isTouch = false // 是否触摸
 
   this.initEvent(this.elm)
