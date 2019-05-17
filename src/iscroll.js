@@ -8,6 +8,10 @@ function IScroll (options = {}) {
   this.style = this.elm.querySelector('.content').style // 里面可滚动元素的样式
   this.initStyle()
 
+  this.$a = 5 // 阻力
+  this.maxX = 0
+  this.maxY = 0
+
   // 水平方向的偏移量和垂直方向的偏移量
   this.$x = this.$y = 0
 
@@ -31,18 +35,18 @@ function IScroll (options = {}) {
     }
   })
 
-  this.privateEvent = {
-    /** 向左滑动事件 */
-    slideLeft () {
+  // this.privateEvent = {
+  //   /** 向左滑动事件 */
+  //   slideLeft () {
 
-    },
-    /** 向右滑动事件 */
-    slideRight () {},
-    /** 向上滑动事件 */
-    slideTop () {},
-    /** 向下滑动事件 */
-    slideRight () {}
-  }
+  //   },
+  //   /** 向右滑动事件 */
+  //   slideRight () {},
+  //   /** 向上滑动事件 */
+  //   slideTop () {},
+  //   /** 向下滑动事件 */
+  //   slideRight () {}
+  // }
 
   this.event = {}
 

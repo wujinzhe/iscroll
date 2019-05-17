@@ -7,6 +7,6 @@ const iscroll = new IScroll({
   elm: document.querySelector('#app')
 })
 
-iscroll.on('slide', () => {
-  console.log('slide')
+iscroll.on('slide', (date) => {
+  console.log('slide', date.v)
 })
